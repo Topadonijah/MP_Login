@@ -1,0 +1,60 @@
+package com.example.sol;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+    private ActivityResultLauncher<Intent> resultLauncher;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        setTitle("Main Activity");
+
+
+        Button window_chg = (Button) findViewById(R.id.window_chg);
+
+        window_chg.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                EditText editText1 = (EditText) findViewById(R.id.editTextTextPersonName);
+
+                Intent intent = new Intent(getApplicationContext(),
+                        SecondActivity.class);
+                intent.putExtra("Name", editText1.getText().toString());
+                resultLauncher.launch(intent);
+            }
+        });
+
+        resultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == RESULT_OK) {
+                            Intent intent = result.getData();
+                            String Name = intent.getStringExtra("이름");
+                            Toast.makeText(getApplicationContext(), "이름" + Name,
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+        );
+
+
+
+    }
+
+}
