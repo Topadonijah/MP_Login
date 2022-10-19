@@ -1,6 +1,8 @@
 package com.example.sol;
 
-public class Clients extends Application{
+import android.app.Application;
+
+public class Clients extends Application {
 
     
 }

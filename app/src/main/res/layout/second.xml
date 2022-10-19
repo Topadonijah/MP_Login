@@ -23,7 +23,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="36dp"
-        android:paddingtop="dp"
+        android:paddingTop="10dp"
         android:layout_weight="1">
 
         <LinearLayout
@@ -35,7 +35,7 @@
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:text="아이디:"
-                android:textSize="20"
+                android:textSize="20dp"
                 android:layout_weight="1"/>
             <EditText
             android:layout_width="0px"
@@ -58,7 +58,7 @@
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:text="비밀번호:"
-                android:textSize="20"
+                android:textSize="20dp"
                 android:layout_weight="1"/>
             <EditText
                 android:layout_width="0px"
@@ -75,7 +75,7 @@
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:text="이름:"
-                android:textSize="20"
+                android:textSize="20dp"
                 android:layout_weight="1"/>
             <EditText
                 android:layout_width="0px"
@@ -92,7 +92,7 @@
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:text="전화번호:"
-                android:textSize="20"
+                android:textSize="20dp"
                 android:layout_weight="1"/>
             <EditText
                 android:layout_width="0px"
@@ -109,7 +109,7 @@
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:text="주소:"
-                android:textSize="20"
+                android:textSize="20dp"
                 android:layout_weight="1"/>
             <EditText
                 android:layout_width="0px"
@@ -132,6 +132,7 @@
                 android:layout_height="wrap_content"
                 android:text="동의"/>
             <RadioButton
+                android:id="@+id/accept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
@@ -139,8 +140,10 @@
                 android:layout_height="wrap_content"
                 android:text="거절"/>
             <RadioButton
-               android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:id="@+id/decline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
         </LinearLayout>
 
     <Button

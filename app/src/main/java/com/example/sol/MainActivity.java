@@ -24,10 +24,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Main Activity");
 
+        Button login = (Button) findViewById(R.id.login);
 
-        Button window_chg = (Button) findViewById(R.id.window_chg);
-
-        window_chg.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 EditText editText1 = (EditText) findViewById(R.id.editTextTextPersonName);
 
@@ -52,6 +51,17 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        Button signup =(Button) findViewById(R.id.signup);
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),
+                        SecondActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

@@ -28,6 +28,10 @@
             android:name=".SecondActivity"
             android:label="Second 액티비티"/>
 
+        <activity
+            android:name="Clients"
+            android:label="Third 액티비티"/>
+
     </application>
 
 </manifest>
