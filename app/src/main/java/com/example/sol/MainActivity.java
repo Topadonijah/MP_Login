@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Main Activity");
-
+        //로그인 --------------------------------------//
         Button login = (Button) findViewById(R.id.login);
-
         login.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
                 EditText editText1 = (EditText) findViewById(R.id.editTextTextPersonName);
 
@@ -51,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        //로그인 끝 --------------------------------------//
 
+
+        //회원가입 ----------------------------------------//
         Button signup =(Button) findViewById(R.id.signup);
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //회원가입 끝 ----------------------------------//
 
 
 
