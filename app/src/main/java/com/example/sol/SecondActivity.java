@@ -24,10 +24,10 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class SecondActivity extends Activity {
-    String id_result = "";
     int idOk = 0;
     int pwOk = 0;
     int checkOk = 0;
+    String id_result = "";
 
     @Override
     protected  void onCreate(Bundle savedInstanceState){
@@ -36,8 +36,6 @@ public class SecondActivity extends Activity {
         setContentView(R.layout.second);
 
         Intent inIntent = getIntent();
-        final String Namevalue = inIntent.getStringExtra("이름");
-
 
         //중복 확인 버튼 ----------------------------------------------//
         Button overlap = (Button) findViewById(R.id.overlap);
@@ -53,21 +51,24 @@ public class SecondActivity extends Activity {
 
                 if(input.length() == 0){
                     a.setText("아이디를 입력해 주세요");
+                    idOk = 0;
                 }
                 else if(id_check1 != null){
                     a.setText("중복된 아이디 입니다.");
+                    idOk = 0;
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),input,Toast.LENGTH_SHORT).show();
                     a.setText("사용가능한 아이디 입니다.");
                     idOk = 1;
-                    id_result = input; //사용할 아이디를 미리 저장
+                    id_result = input;
                 }
 
                 hidden.setVisibility(View.VISIBLE);
             }
         });
         //중복 확인 버튼 끝--------------------------------------//
+
+
 
         //비밀번호가 유효한지 확인 --------------------//
         EditText pweditText = (EditText) findViewById(R.id.pwedit);
@@ -134,6 +135,8 @@ public class SecondActivity extends Activity {
         //비밀번호가 유효한지 확인 끝---------------//
 
 
+
+
         //체크버튼 -------------------------------------------//
         RadioGroup group = (RadioGroup) findViewById(R.id.radiogroup);
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -151,19 +154,21 @@ public class SecondActivity extends Activity {
         //체크버튼 끝 ----------------------------------------//
 
 
+
+
         //회원가입 버튼---------------------------------------//
         Button btnReturn = (Button) findViewById(R.id.btnReturn);
         btnReturn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 EditText currenttext = (EditText) findViewById(R.id.newid);
-
-                if(idOk + pwOk+ checkOk == 3 && id_result == currenttext.toString()) {
+                String now = currenttext.getText().toString();
+                if(idOk + pwOk+ checkOk == 3 && now.equals(id_result)) {
                     Intent outIntent = new Intent(getApplicationContext(),
                             MainActivity.class);
                     setResult(RESULT_OK, outIntent);
                     finish();
                 }
-                else if(idOk == 0 || id_result != currenttext.toString()){
+                else if(idOk == 0 || !now.equals(id_result)){
                     Toast.makeText(getApplicationContext(),"아이디 중복검사를 해주세요",Toast.LENGTH_SHORT).show();
                 }
                 else if(pwOk == 0){
@@ -177,6 +182,4 @@ public class SecondActivity extends Activity {
         //회원가입 버튼 끝----------------------------------------//
 
     }
-
-
 }
