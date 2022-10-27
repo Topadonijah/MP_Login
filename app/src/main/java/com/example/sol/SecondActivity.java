@@ -155,14 +155,15 @@ public class SecondActivity extends Activity {
         Button btnReturn = (Button) findViewById(R.id.btnReturn);
         btnReturn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                EditText currenttext = (EditText) findViewById(R.id.newid);
 
-                if(idOk + pwOk+ checkOk == 3) {
+                if(idOk + pwOk+ checkOk == 3 && id_result == currenttext.toString()) {
                     Intent outIntent = new Intent(getApplicationContext(),
                             MainActivity.class);
                     setResult(RESULT_OK, outIntent);
                     finish();
                 }
-                else if(idOk == 0){
+                else if(idOk == 0 || id_result != currenttext.toString()){
                     Toast.makeText(getApplicationContext(),"아이디 중복검사를 해주세요",Toast.LENGTH_SHORT).show();
                 }
                 else if(pwOk == 0){
