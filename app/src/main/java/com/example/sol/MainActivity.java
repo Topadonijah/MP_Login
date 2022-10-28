@@ -8,50 +8,61 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
-    private ActivityResultLauncher<Intent> resultLauncher;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Main Activity");
+
+        SharedPreferences pref = getSharedPreferences("Clients", MODE_PRIVATE);
+
         //로그인 --------------------------------------//
         Button login = (Button) findViewById(R.id.login);
+        EditText inputid = (EditText) findViewById(R.id.idinput);
+        EditText inputpw = (EditText) findViewById(R.id.pwinput);
+
         login.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                EditText editText1 = (EditText) findViewById(R.id.editTextTextPersonName);
+                String id = inputid.getText().toString();
+                String pw = inputpw.getText().toString();
+                String array = pref.getString(id,null);
 
-                Intent intent = new Intent(getApplicationContext(),
-                        SecondActivity.class);
-                intent.putExtra("Name", editText1.getText().toString());
-                resultLauncher.launch(intent);
-            }
-        });
-
-        resultLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                new ActivityResultCallback<ActivityResult>() {
-                    @Override
-                    public void onActivityResult(ActivityResult result) {
-                        if (result.getResultCode() == RESULT_OK) {
-                            Intent intent = result.getData();
-                            String Name = intent.getStringExtra("이름");
-                            Toast.makeText(getApplicationContext(), "이름" + Name,
-                                    Toast.LENGTH_LONG).show();
-                        }
+                LinearLayout idlay = (LinearLayout) findViewById(R.id.idv);
+                if(array == null){
+                    idlay.setVisibility(View.VISIBLE);
+                } else {
+                    JSONObject info = null;
+                    try {
+                        info = new JSONObject(array);
+                        String copw = (String) info.get("pw"); //아이디에 유효한 비밀번호
+                        if(pw.equals(copw)){
+                             //pass to third
+                             Toast.makeText(getApplicationContext(),"correct account!", Toast.LENGTH_SHORT).show();
+                         }
+                         else{
+                             LinearLayout pwlay = (LinearLayout) findViewById(R.id.pwv);
+                             pwlay.setVisibility(View.VISIBLE);
+                         }
+                    } catch (JSONException e) {
+                        Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
                     }
                 }
-        );
+
+            }
+        });
         //로그인 끝 --------------------------------------//
 
 

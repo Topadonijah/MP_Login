@@ -19,6 +19,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -47,6 +49,14 @@ public class SecondActivity extends Activity {
 
                 SharedPreferences check = getSharedPreferences("Clients",MODE_PRIVATE);
                 String id_check1 = check.getString(input, null);
+
+                if(id_check1 == null){
+                    Toast.makeText(getApplicationContext(), "null", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), id_check1, Toast.LENGTH_SHORT).show();
+                }
+
                 TextView a = (TextView) findViewById(R.id.id_overlap);
 
                 if(input.length() == 0){
@@ -117,7 +127,7 @@ public class SecondActivity extends Activity {
 
                 if (length + upper + special == 3){ //세 조건을 모두 만족한다면
                     pwcheck.setText("사용가능한 비밀번호 입니다.");
-                    pwcheck.setTextColor(Color.parseColor("#FF00FFFF"));
+                    pwcheck.setTextColor(Color.parseColor("#FF4CAF50"));
                     pwOk = 1;
                 }
                 else{
@@ -154,15 +164,34 @@ public class SecondActivity extends Activity {
         //체크버튼 끝 ----------------------------------------//
 
 
-
+        EditText name = (EditText) findViewById(R.id.editname);
+        EditText number = (EditText) findViewById(R.id.editnumber);
+        EditText addr = (EditText) findViewById(R.id.editaddr);
 
         //회원가입 버튼---------------------------------------//
         Button btnReturn = (Button) findViewById(R.id.btnReturn);
         btnReturn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                SharedPreferences.Editor signup = getSharedPreferences("Clients", MODE_PRIVATE).edit();
                 EditText currenttext = (EditText) findViewById(R.id.newid);
+                JSONObject arr = new JSONObject();
+
                 String now = currenttext.getText().toString();
                 if(idOk + pwOk+ checkOk == 3 && now.equals(id_result)) {
+                    try {
+                        arr.put("pw", pweditText.getText().toString());
+                        arr.put("name", name.getText().toString());
+                        arr.put("number", number.getText().toString());
+                        arr.put("addr", addr.getText().toString());
+
+                        signup.putString(id_result, arr.toString());
+                        signup.apply();
+
+                        Toast.makeText(getApplicationContext(),"회원가입 완료되었습니다.",Toast.LENGTH_SHORT).show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
                     Intent outIntent = new Intent(getApplicationContext(),
                             MainActivity.class);
                     setResult(RESULT_OK, outIntent);

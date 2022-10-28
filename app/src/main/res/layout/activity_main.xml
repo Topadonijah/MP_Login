@@ -25,7 +25,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/idinput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -33,6 +33,20 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="아이디" />
+
+        <LinearLayout
+            android:id="@+id/idv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="존재하지 않는 계정입니다."
+                android:textColor="#FFFF0000"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/pw"
@@ -52,6 +66,19 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="비밀번호" />
+
+        <LinearLayout
+            android:id="@+id/pwv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFF0000"
+                android:text="비밀번호가 일치하지 않습니다."/>
+        </LinearLayout>
 
         <Button
             android:id="@+id/login"

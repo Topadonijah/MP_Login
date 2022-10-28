@@ -29,7 +29,7 @@
             android:label="Second 액티비티"/>
 
         <activity
-            android:name="Clients"
+            android:name=".ThridActivity"
             android:label="Third 액티비티"/>
 
     </application>

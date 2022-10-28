@@ -92,7 +92,6 @@
                 android:id="@+id/pwcheck"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFF0000"
                 android:text="8자리 이상 대문자, 특수문자 포함"  >
             </TextView>
 
@@ -111,6 +110,7 @@
                 android:textSize="20dp"
                 android:layout_weight="1"/>
             <EditText
+                android:id="@+id/editname"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"/>
@@ -128,6 +128,7 @@
                 android:textSize="20dp"
                 android:layout_weight="1"/>
             <EditText
+                android:id="@+id/editnumber"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -146,6 +147,7 @@
                 android:textSize="20dp"
                 android:layout_weight="1"/>
             <EditText
+                android:id="@+id/editaddr"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"/>
