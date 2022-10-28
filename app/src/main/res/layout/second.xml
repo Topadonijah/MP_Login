@@ -9,14 +9,21 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#46226B">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="회원가입"
         android:textSize="25dp"
         android:textStyle="bold"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,13 +43,15 @@
                 android:layout_height="wrap_content"
                 android:text="아이디:"
                 android:textSize="20dp"
+                android:textColor="#46226B"
                 android:layout_weight="1"/>
             <EditText
                 android:id="@+id/newid"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:selectAllOnFocus="true"/>
+                android:selectAllOnFocus="true"
+                android:textColor="#46226B"/>
 
             <Button
                 android:id="@+id/overlap"
@@ -74,13 +83,15 @@
                 android:layout_height="wrap_content"
                 android:text="비밀번호:"
                 android:textSize="20dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textColor="#46226B"/>
             <EditText
                 android:id="@+id/pwedit"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:selectAllOnFocus="true"/>
+                android:selectAllOnFocus="true"
+                android:textColor="#46226B"/>
         </LinearLayout>
 
         <LinearLayout
@@ -108,12 +119,14 @@
                 android:layout_height="wrap_content"
                 android:text="이름:"
                 android:textSize="20dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textColor="#46226B"/>
             <EditText
                 android:id="@+id/editname"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"/>
+                android:layout_weight="3"
+                android:textColor="#46226B"/>
         </LinearLayout>
 
         <LinearLayout
@@ -126,13 +139,15 @@
                 android:layout_height="wrap_content"
                 android:text="전화번호:"
                 android:textSize="20dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textColor="#46226B"/>
             <EditText
                 android:id="@+id/editnumber"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:inputType="numberDecimal"/>
+                android:inputType="numberDecimal"
+                android:textColor="#46226B"/>
         </LinearLayout>
 
         <LinearLayout
@@ -145,12 +160,14 @@
                 android:layout_height="wrap_content"
                 android:text="주소:"
                 android:textSize="20dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textColor="#46226B"/>
             <EditText
                 android:id="@+id/editaddr"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"/>
+                android:layout_weight="3"
+                android:textColor="#46226B"/>
         </LinearLayout>
 
         <LinearLayout

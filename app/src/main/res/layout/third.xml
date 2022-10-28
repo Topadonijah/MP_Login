@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,7 +11,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/teal_200"
+            android:background="#46226B"
             android:layout_weight="1"
             android:layout_marginBottom="10dp">
 
@@ -20,7 +19,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="30dp"
-                android:text="TEST"
+                android:text="Test"
+                android:textStyle="italic"
+                android:textColor="@color/white"
                 android:gravity="center"/>
 
         </LinearLayout>
@@ -30,47 +31,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="33">
 
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:layout_marginTop="500dp">
 
-                <ImageView
-                    android:layout_width="0px"
-                    android:layout_height="150dp"
-                    android:src="@color/teal_200"
-                    android:layout_weight="2"/>
-
-                <LinearLayout
-                    android:layout_width="0px"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width= "match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="E-cycle new ver"
-                        android:layout_gravity="top"
-                        android:textStyle="bold"
-                        android:textSize="30dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top"
-                        android:layout_marginBottom="5dp"
-                        android:text="The brand new e-cycle that makes you more comfortable and more stylish enjoy it now!"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="1500$"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:textColor="#FFFF0000"/>
-
-                </LinearLayout>
-
+                <Button
+                    android:id="@+id/add"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+                <Button
+                    android:id="@+id/delete"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
             </LinearLayout>
 
         </FrameLayout>

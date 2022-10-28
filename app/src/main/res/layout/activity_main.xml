@@ -9,7 +9,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +26,7 @@
                 android:text="Moblie\nProgramming\nAssignment"
                 android:textSize="30dp"
                 android:textColor="@color/white"
-                android:layout_marginTop="80dp"/>
+                android:layout_marginTop="50dp"/>
 
             <ImageView
                 android:layout_width="match_parent"
@@ -37,11 +38,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="330dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="220dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:orientation="vertical"
-            android:paddingTop="10dp"
+            android:paddingTop="30dp"
             android:paddingHorizontal="10dp"
             android:background="@color/white"
             android:elevation="10dp">
@@ -56,25 +57,25 @@
                     android:textStyle="bold"
                     android:textColor="#46226B"/>
 
-                <EditText
-                    android:id="@+id/idinput"
+            <EditText
+                android:id="@+id/idinput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:ems="15"
+                android:minHeight="48dp"
+                android:selectAllOnFocus="true"
+                android:text="아이디"
+                android:textColor="#46226B" />
+
+                <TextView
+                    android:id="@+id/idv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="#46226B"
-                    android:focusable="true"
-                    android:ems="15"
-                    android:inputType="textPersonName"
-                    android:text="아이디" />
-
-                    <TextView
-                        android:id="@+id/idv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="존재하지 않는 계정입니다."
-                        android:textColor="#FFFF0000"
-                        android:visibility="gone"/>
+                    android:text="존재하지 않는 계정입니다."
+                    android:textColor="#FFFF0000"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/pw"
@@ -86,17 +87,18 @@
                     android:textSize="15dp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/pwinput"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:focusable="true"
-                    android:textColor="#46226B"
-                    android:ems="15"
-                    android:inputType="textPersonName"
-                    android:text="비밀번호" />
+            <EditText
+                android:id="@+id/pwinput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:ems="15"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:selectAllOnFocus="true"
+                android:text="비밀번호"
+                android:textColor="#46226B" />
 
                     <TextView
                         android:id="@+id/pwv"
@@ -105,78 +107,66 @@
                         android:text="비밀번호가 일치하지 않습니다."
                         android:textColor="#FFFF0000"
                         android:visibility="gone"/>
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="560dp"
-                android:layout_marginHorizontal="30dp"
-                android:text="로그인"
-                android:background="#46226B"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="625dp"
-                android:orientation="vertical">
+                android:layout_marginTop="50dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="회원이 아니신가요?"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="italic"/>
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="회원이 아니신가요?"
-                        android:textSize="15dp"
-                        android:paddingLeft="40dp"
-                        android:layout_marginLeft="50dp"
-                        android:gravity="center"
-                        android:textStyle="italic"
-                        android:ems="10"/>
-
-                    <Button
-                        android:id="@+id/signup"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:text="회원가입"
-                        android:textColor="#46226B"
-                        android:background="#00000000"/>
-                </LinearLayout>
-
-
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="상품만 보고싶어요"
-                        android:textSize="15dp"
-                        android:paddingLeft="40dp"
-                        android:layout_marginLeft="50dp"
-                        android:gravity="center"
-                        android:textStyle="italic"
-                        android:ems="10"/>
-
-                    <Button
-                        android:id="@+id/signin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:textColor="#46226B"
-                        android:background="#00000000"
-                        android:text="비회원으로시작" />
-                </LinearLayout>
-
+                <Button
+                    android:id="@+id/signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="회원가입"
+                    android:textColor="#46226B"
+                    android:background="#00000000"/>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="상품만 보고싶어요"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="italic" />
+
+                <Button
+                    android:id="@+id/guest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#46226B"
+                    android:background="#00000000"
+                    android:text="비회원으로시작" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="560dp">
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:text="로그인"
+                android:background="#46226B"/>
+        </LinearLayout>
+
     </FrameLayout>
 </RelativeLayout>

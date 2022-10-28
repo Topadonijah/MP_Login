@@ -52,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
                         if(pw.equals(copw)){
                              //pass to third
                              Toast.makeText(getApplicationContext(),"correct account!", Toast.LENGTH_SHORT).show();
+
+                             Intent intent = new Intent(getApplicationContext(),
+                                     ThirdActivity.class);
+                             startActivity(intent);
                          }
                          else{
                              TextView pwlay = (TextView) findViewById(R.id.pwv);
@@ -79,6 +83,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //회원가입 끝 ----------------------------------//
+
+        //회원가입없이 -------------------------------------//
+        Button guest = (Button)  findViewById(R.id.guest);
+        guest.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),
+                        ThirdActivity.class);
+                startActivity(intent);
+            }
+        });
+        //회원가입없이 끝----------------------------------//
 
 
 
