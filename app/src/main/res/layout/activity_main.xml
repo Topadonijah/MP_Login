@@ -7,123 +7,176 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:orientation="vertical"
-        android:paddingBottom="10dp">
-
-        <TextView
-            android:id="@+id/id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="ID"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/idinput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="아이디" />
-
-        <LinearLayout
-            android:id="@+id/idv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="존재하지 않는 계정입니다."
-                android:textColor="#FFFF0000"/>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/pw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="PW"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/pwinput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="비밀번호" />
-
-        <LinearLayout
-            android:id="@+id/pwv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#FFFF0000"
-                android:text="비밀번호가 일치하지 않습니다."/>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginRight="270dp"
-            android:text="로그인" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <Button
-        android:id="@+id/signup"
-        android:layout_width="0px"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="회원가입"
-            android:layout_margin="20dp"/>
-
-        <Button
-            android:id="@+id/signin"
-            android:layout_width="0px"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="상품출력"
-            android:layout_margin="20dp"/>
+            android:orientation="vertical"
+            android:background="#46226B">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:text="Moblie\nProgramming\nAssignment"
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="80dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@color/white"
+                android:layout_marginTop="120dp"/>
         </LinearLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingHorizontal="10dp"
+            android:background="@color/white"
+            android:elevation="10dp">
 
-e</RelativeLayout>
+                <TextView
+                    android:id="@+id/id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="아이디를 입력하세요"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="#46226B"/>
+
+                <EditText
+                    android:id="@+id/idinput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#46226B"
+                    android:focusable="true"
+                    android:ems="15"
+                    android:inputType="textPersonName"
+                    android:text="아이디" />
+
+                    <TextView
+                        android:id="@+id/idv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="존재하지 않는 계정입니다."
+                        android:textColor="#FFFF0000"
+                        android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/pw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="비밀번호를 입력하세요."
+                    android:textColor="#46226B"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/pwinput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:focusable="true"
+                    android:textColor="#46226B"
+                    android:ems="15"
+                    android:inputType="textPersonName"
+                    android:text="비밀번호" />
+
+                    <TextView
+                        android:id="@+id/pwv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="비밀번호가 일치하지 않습니다."
+                        android:textColor="#FFFF0000"
+                        android:visibility="gone"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="560dp"
+                android:layout_marginHorizontal="30dp"
+                android:text="로그인"
+                android:background="#46226B"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="625dp"
+                android:orientation="vertical">
 
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="221dp"-->
-<!--        android:layout_height="162dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginStart="95dp"-->
-<!--        android:layout_marginBottom="204dp"-->
-<!--        app:srcCompat="@android:drawable/sym_action_chat" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="회원이 아니신가요?"
+                        android:textSize="15dp"
+                        android:paddingLeft="40dp"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center"
+                        android:textStyle="italic"
+                        android:ems="10"/>
+
+                    <Button
+                        android:id="@+id/signup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:text="회원가입"
+                        android:textColor="#46226B"
+                        android:background="#00000000"/>
+                </LinearLayout>
 
 
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="상품만 보고싶어요"
+                        android:textSize="15dp"
+                        android:paddingLeft="40dp"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center"
+                        android:textStyle="italic"
+                        android:ems="10"/>
+
+                    <Button
+                        android:id="@+id/signin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:textColor="#46226B"
+                        android:background="#00000000"
+                        android:text="비회원으로시작" />
+                </LinearLayout>
+
+            </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

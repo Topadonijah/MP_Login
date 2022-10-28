@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 String pw = inputpw.getText().toString();
                 String array = pref.getString(id,null);
 
-                LinearLayout idlay = (LinearLayout) findViewById(R.id.idv);
+                TextView idlay = (TextView) findViewById(R.id.idv);
                 if(array == null){
                     idlay.setVisibility(View.VISIBLE);
                 } else {
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                              Toast.makeText(getApplicationContext(),"correct account!", Toast.LENGTH_SHORT).show();
                          }
                          else{
-                             LinearLayout pwlay = (LinearLayout) findViewById(R.id.pwv);
+                             TextView pwlay = (TextView) findViewById(R.id.pwv);
                              pwlay.setVisibility(View.VISIBLE);
                          }
                     } catch (JSONException e) {
