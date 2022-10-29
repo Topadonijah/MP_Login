@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="italic"
                 android:gravity="center"
-                android:text="Moblie\nProgramming\nAssignment"
+                android:text="Moblie\nProgramming"
                 android:textSize="30dp"
                 android:textColor="@color/white"
                 android:layout_marginTop="50dp"/>

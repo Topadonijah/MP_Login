@@ -32,6 +32,13 @@
             android:name=".ThirdActivity"
             android:label="Third 액티비티"/>
 
+        <activity
+            android:name=".Clientinfo"
+            android:theme="@android:style/Theme.Dialog"/>
+
+        <activity android:name=".RegistQeustion"
+            android:theme="@android:style/Theme.Dialog"/>
+
     </application>
 
 </manifest>

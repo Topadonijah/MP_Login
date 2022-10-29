@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        tools:ignore="MissingConstraints"
+        android:outlineProvider="bounds"
+        android:outlineAmbientShadowColor="@color/black">
         <ImageView
             android:layout_width="0px"
             android:layout_height="150dp"
@@ -29,25 +31,7 @@
                 android:textColor="#46226B"
                 android:textStyle="bold"
                 android:textSize="30dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="10dp"
-                android:text="The brand new e-cycle that makes you more comfortable and more stylish enjoy it now!"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1500$"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp"
-                android:textColor="#46226B"/>
-
         </LinearLayout>
-
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

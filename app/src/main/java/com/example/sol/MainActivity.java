@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
                              Intent intent = new Intent(getApplicationContext(),
                                      ThirdActivity.class);
+                             intent.putExtra("id", id);
                              startActivity(intent);
                          }
                          else{
