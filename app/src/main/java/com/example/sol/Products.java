@@ -4,17 +4,20 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
-public class Products extends LinearLayout {
+public class Products {
+    private int image;
+    private String name;
 
-    public Products(Context context){
-        super(context);
-
-        init(context);
+    public Products(int image, String name) {
+        this.image = image;
+        this.name = name;
     }
 
-    private void init(Context context){
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.product, this, true);
+    public int getImage() {
+        return this.image;
     }
 
+    public String getName() {
+        return this.name;
+    }
 }

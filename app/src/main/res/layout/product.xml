@@ -5,33 +5,37 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"
-        android:outlineProvider="bounds"
-        android:outlineAmbientShadowColor="@color/black">
+        android:orientation="horizontal">
+
         <ImageView
-            android:layout_width="0px"
-            android:layout_height="150dp"
-            android:src="@color/teal_200"
-            android:layout_weight="2"/>
+            android:id="@+id/image"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@color/teal_200"/>
 
-        <LinearLayout
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:orientation="vertical">
 
-            <TextView
-                android:layout_width= "match_parent"
-                android:layout_height="wrap_content"
-                android:text="E-cycle new ver"
-                android:layout_gravity="top"
-                android:paddingLeft="10dp"
-                android:textColor="#46226B"
-                android:textStyle="bold"
-                android:textSize="30dp"/>
-        </LinearLayout>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width= "match_parent"
+            android:layout_height="wrap_content"
+            android:text="Input Title"
+            android:layout_gravity="top"
+            android:paddingLeft="10dp"
+            android:textColor="#46226B"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:text="삭제"
+            android:background="#00000000"
+            android:textColor="#FB0909"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
