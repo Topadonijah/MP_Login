@@ -77,9 +77,11 @@ public class SecondActivity extends Activity {
             public void onClick(View view) {
                 if(pweditText.getInputType() == 0x00000081) {
                     pweditText.setInputType(0x00000001);
+                    reveal.setImageResource(R.drawable.ic_baseline_wb_incandescent_24_yellow);
                 }
                 else{
                     pweditText.setInputType(0x00000081);
+                    reveal.setImageResource(R.drawable.ic_baseline_wb_incandescent_24);
                 }
             }
         });

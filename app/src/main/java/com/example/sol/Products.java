@@ -1,9 +1,5 @@
 package com.example.sol;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.widget.LinearLayout;
-
 public class Products {
     private int image;
     private String name;
