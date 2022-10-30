@@ -88,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
                         String copw = (String) info.get("pw"); //아이디에 유효한 비밀번호
                         if(pw.equals(copw)){
                              //pass to third
-                             Toast.makeText(getApplicationContext(),"correct account!", Toast.LENGTH_SHORT).show();
-
                              Intent intent = new Intent(getApplicationContext(),
                                      ThirdActivity.class);
                              intent.putExtra("id", id);

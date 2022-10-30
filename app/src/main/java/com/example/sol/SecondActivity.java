@@ -44,13 +44,6 @@ public class SecondActivity extends Activity {
                 SharedPreferences check = getSharedPreferences("Clients",MODE_PRIVATE);
                 String id_check1 = check.getString(input, null);
 
-                if(id_check1 == null){
-                    Toast.makeText(getApplicationContext(), "null", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), id_check1, Toast.LENGTH_SHORT).show();
-                }
-
                 TextView a = (TextView) findViewById(R.id.id_overlap);
 
                 if(input.length() == 0){

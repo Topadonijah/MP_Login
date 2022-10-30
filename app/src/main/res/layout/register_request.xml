@@ -17,7 +17,7 @@
             android:id="@+id/id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="회원가입이 필요합니다.\n 회원가입 창으로 이동하시겠습니까?"
+            android:text="회원가입 창으로 이동하시겠습니까?"
             android:textSize="15dp"
             android:gravity="center"
             android:layout_marginBottom="20dp"/>
