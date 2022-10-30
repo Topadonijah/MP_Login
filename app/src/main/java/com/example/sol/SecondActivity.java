@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -72,13 +73,25 @@ public class SecondActivity extends Activity {
         //중복 확인 버튼 끝--------------------------------------//
 
 
-
         //비밀번호가 유효한지 확인 --------------------//
         EditText pweditText = (EditText) findViewById(R.id.pwedit);
         TextView pwcheck = (TextView) findViewById(R.id.pwcheck);
+        pweditText.setInputType(0x00000081);
+
+        ImageButton reveal = (ImageButton) findViewById(R.id.reveal);
+        reveal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(pweditText.getInputType() == 0x00000081) {
+                    pweditText.setInputType(0x00000001);
+                }
+                else{
+                    pweditText.setInputType(0x00000081);
+                }
+            }
+        });
 
         pweditText.addTextChangedListener(new TextWatcher() {
-
             String pretext, nowtext;
             @Override
 
@@ -89,6 +102,7 @@ public class SecondActivity extends Activity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if(charSequence.equals(pretext)){return;} //변함 없다면 메소드 종료
+
 
                 int length = 0; int upper = 0; int special = 0; int ascii = 0;
                 int index = 0;

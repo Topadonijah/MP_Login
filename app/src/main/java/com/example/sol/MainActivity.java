@@ -9,11 +9,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,8 +39,40 @@ public class MainActivity extends AppCompatActivity {
         Button login = (Button) findViewById(R.id.login);
         EditText inputid = (EditText) findViewById(R.id.idinput);
         EditText inputpw = (EditText) findViewById(R.id.pwinput);
+        ImageButton reveal = (ImageButton) findViewById(R.id.reveal);
 
-        login.setOnClickListener(new View.OnClickListener() {
+        inputid.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+                    inputid.setText("");
+                }
+            }
+        });
+
+        inputpw.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+                    inputpw.setText("");
+                    inputpw.setInputType(0x00000081);
+                }
+            }
+        });
+
+        reveal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(inputpw.getInputType() == 0x00000081) {
+                    inputpw.setInputType(0x00000001);
+                }
+                else{
+                    inputpw.setInputType(0x00000081);
+                }
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {//로그인 버튼 클릭시 입력한 정보가 유효한지 확인
             public void onClick(View v) {
                 String id = inputid.getText().toString();
                 String pw = inputpw.getText().toString();

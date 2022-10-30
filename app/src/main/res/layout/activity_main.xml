@@ -38,7 +38,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="330dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="200dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:orientation="vertical"
@@ -87,6 +87,9 @@
                     android:textSize="15dp"
                     android:textStyle="bold" />
 
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/pwinput"
                 android:layout_width="wrap_content"
@@ -100,18 +103,29 @@
                 android:text="비밀번호"
                 android:textColor="#46226B" />
 
-                    <TextView
-                        android:id="@+id/pwv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="비밀번호가 일치하지 않습니다."
-                        android:textColor="#FFFF0000"
-                        android:visibility="gone"/>
+                <ImageButton
+                    android:id="@+id/reveal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_baseline_wb_incandescent_24"
+                    android:background="#00000000"/>
+
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/pwv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="비밀번호가 일치하지 않습니다."
+                android:textColor="#FFFF0000"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp">
+                android:layout_marginTop="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -119,6 +133,7 @@
                     android:text="회원이 아니신가요?"
                     android:textSize="15dp"
                     android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
                     android:textStyle="italic"/>
 
                 <Button
@@ -127,6 +142,8 @@
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:text="회원가입"
+                    android:layout_weight="5"
+                    android:gravity="left"
                     android:textColor="#46226B"
                     android:background="#00000000"/>
             </LinearLayout>

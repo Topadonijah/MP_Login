@@ -36,7 +36,7 @@
             android:name=".Clientinfo"
             android:theme="@android:style/Theme.Dialog"/>
 
-        <activity android:name=".RegistQeustion"
+        <activity android:name=".RegistQuestion"
             android:theme="@android:style/Theme.Dialog"/>
 
     </application>

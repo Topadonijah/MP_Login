@@ -53,13 +53,6 @@ public class Myadapter extends BaseAdapter {
 
         ImageView imageView = (ImageView)view.findViewById(R.id.image);
         TextView productName = (TextView)view.findViewById(R.id.title);
-        Button pos = (Button)view.findViewById(R.id.delete);
-        pos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(mContext.getApplicationContext(), "123", Toast.LENGTH_SHORT).show();
-            }
-        });
         imageView.setImageResource(products.get(position).getImage());
         productName.setText(products.get(position).getName());
         return view;

@@ -8,7 +8,7 @@ import android.view.Window;
 import android.widget.Button;
 
 
-public class RegistQeustion extends Activity {
+public class RegistQuestion extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

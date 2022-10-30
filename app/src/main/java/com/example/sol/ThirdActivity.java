@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,15 +30,6 @@ public class ThirdActivity extends Activity{
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             }
         });
-
-        Intent pos = getIntent();
-        int position = pos.getIntExtra("pos", -1);
-        if(position > -1){
-            productDataList.remove(position);
-            myAdapter.notifyDataSetChanged();
-        }
-
-
         //상품정보 바인딩 끝--------------------------------------------------//
 
         //회원정보 창 ---------------------------------------------//
@@ -72,13 +62,13 @@ public class ThirdActivity extends Activity{
                 @Override
                 public void onClick(View view) {
                     Intent register = new Intent(getApplicationContext(),
-                            RegistQeustion.class);
+                            RegistQuestion.class);
                     startActivityForResult(register, 0);
                 }
             });
         }
     }
-
+    //회원정보 창 끝 ---------------------------------------------//
     public void InitializeProductData(){ //리스트뷰에 추가할 항목들을 초기화 해줌
         productDataList = new ArrayList<Products>();
         productDataList.add(new Products(R.drawable.carrot, "당근"));
