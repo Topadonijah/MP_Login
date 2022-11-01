@@ -16,7 +16,7 @@
 
 - 특이사항
   - 아이디와 비밀번호를 입력하면 일치하는 경우 로그인이 가능합니다.
-  - 전구 버튼을 누르면 비밀번호를 점자에서 텍스트로 변환하여 어떻게 입력 할 수 있는지 확인 할 수 있습니다.
+  - 전구 버튼을 누르면 비밀번호를 점자에서 텍스트로 변환하여 어떻게 입력하였는지 확인 할 수 있습니다.
   
   ![image](https://user-images.githubusercontent.com/49757982/198883416-824b8267-ddbd-44dc-86c4-c95000a0bca5.png) ![image](https://user-images.githubusercontent.com/49757982/198883408-df5d130f-1f75-42b6-a938-23af7aaecf87.png)
 
