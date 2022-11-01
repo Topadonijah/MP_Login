@@ -4,7 +4,7 @@
 - JAVA
 - SDK: minSDK(31) compileSDK(32)
 - Android 12
--IDE: Android Studio
+- IDE: Android Studio
 
 ## 액티비티
 
